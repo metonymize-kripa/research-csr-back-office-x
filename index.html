@@ -40,6 +40,49 @@
                     <li><strong>Emphasize a Hybrid Approach:</strong> Maintain transparency about automation, and establish clear escalation paths for complex questions requiring human expertise and judgment.</li> 
                 </ul>
 
+                <h2>Economic and Technical Trade-offs</h2>
+
+        <p>While implementing LLM-based customer service enhancements offers significant benefits, it's essential to consider the costs and trade-offs involved in different approaches. Let's examine key factors:</p>
+
+        **Data Generation Costs**
+
+        <ul>
+            <li><strong>Traditional Fine-tuning:</strong> Requires a meticulously labeled dataset of researcher emails with corresponding responses. The cost lies in human expert time to categorize emails and, if needed, craft high-quality responses.</li>
+            <li><strong>DPO:</strong> Can potentially reduce data labeling costs since the focus is on comparative feedback between response variations. However, you still need an initial pool of potential responses.</li>
+        </ul>
+
+        **Computing Costs**
+
+        <ul>
+            <li><strong>Model Size:</strong> LLMs can be massive. Larger models generally achieve better performance but are more expensive to train and run. </li>
+            <li><strong>Fine-tuning Duration:</strong> The more you fine-tune, the higher the computational cost. DPO might require fewer fine-tuning iterations if it converges on good responses faster.</li>
+            <li><strong>Quantization:</strong> Can drastically reduce compute costs through compression but might involve specialized hardware or software.</li>
+        </ul>
+
+        **Illustrative Estimates (Hypothetical)**
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Traditional Fine-Tuning</th>
+                    <th>DPO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dataset Preparation (Hours of Expert Time)</td>
+                    <td>50-100+</td>
+                    <td>20-50</td>
+                </tr>
+                <tr>
+                    <td>Fine-tuning on Cloud GPUs (Approx. Cost)</td>
+                    <td>$100 - $500+</td>
+                    <td>$50 - $200</td>
+                </tr>
+            </tbody>
+        </table>
+
                 <hr> <h2>Interactive Demos</h2> 
 
                 <div class="demo-box">
