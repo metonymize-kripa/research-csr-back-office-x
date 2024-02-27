@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>LLMs for Customer Service Automation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="blog-header py-3"> 
+      <h1>Enhancing Customer Service with LLMs</h1>
+    </header>
+
+    <article>  
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+          <section> 
+            <h2>Scenario</h2>
+            <p>Task: Automate responses to customer service emails, potentially handling classification, routing, and even generating drafts.</p> 
+            <p>Data: Thousands of existing customer service emails.</p>
+          </section>
+
+          <section>
+             <h2>Model Options and Analysis</h2>
+
+             <table class="table">
+               <thead>
+                 <tr>
+                   <th>Metric</th>
+                   <th>Base Model</th>
+                   <th>Fine-tuning</th>
+                   <th>Fine-tuning + DPO</th>
+                   <th>Fine-tuning + RLHF</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr><td>Quality</td> <td>Moderate</td><td>Good</td><td>Very Good</td><td>Very Good</td></tr>
+                 <tr><td>Cost</td><td>Low</td><td>Medium</td><td>Medium-High</td><td>High</td></tr>
+                 <tr><td>Timing</td><td>Fast</td><td>Moderate</td><td>Moderate-High</td><td>Slow</td></tr>
+                 <tr><td>Data </td><td>-</td><td>Thousands of emails</td><td>Hundreds of preferences</td><td>Hundreds of preferences + Reward Modeling</td></tr>
+               </tbody>
+             </table>
+
+             <h3>Explanation</h3>
+
+             <ul>
+               <li><strong>Quality:</strong> 
+                 <ul>
+                    <li>Base Model: Might identify general topics but struggle with nuances of customer service interactions.</li>
+                    <li>Fine-tuning: Significantly improves understanding context, classifying issues, and potentially generating appropriate draft responses.</li>
+                    <li>DPO/RLHF: Help refine responses to better match customer expectations, tone, and your company's preferred style. DPO may excel with pairwise comparisons of potential responses, while RLHF could handle more nuanced feedback.</li>
+                 </ul>
+               </li>
+               <li><strong>Cost:</strong> 
+                 <ul>
+                   <li>Data Collection: Your existing emails are a major advantage! However, preference data collection still incurs costs (human evaluators).</li>
+                   <li>Compute: Fine-tuning on a large email dataset can be computationally intensive, and preference optimization adds further costs.</li>
+                 </ul>
+               </li>
+               <li><strong>Timing:</strong>
+                  <ul>
+                    <li>Fine-tuning: Takes time, depending on your dataset size and hardware.</li>
+                    <li>Preference Optimization: Adds further development time, especially for RLHF's reward modeling.</li>
+                  </ul>
+               </li>
+             </ul>
+          </section>
+
+          <section>
+            <h3>Decision Factors</h3>
+            <ul>
+              <li><strong>Budget:</strong> If budget is a major constraint, fine-tuning alone provides a substantial performance boost.</li>
+              <li><strong>Desired Quality:</strong> If exceptional customer experience is paramount, consider RLHF. DPO could be a good middle ground.</li>
+              <li><strong>Tolerance for Errors:</strong> If the system is primarily for triage/drafting (with human oversight), a fine-tuned model might suffice. If it directly interacts with customers, preference optimization becomes more valuable.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Let's Discuss</h3>
+            <ul>
+              <li>Are you aiming for classification, response generation, or both?</li>
+              <li>How critical is a very high quality of service vs. cost constraints?</li> 
+            </ul>
+          </section>
+
+       </div> 
+      </div> 
+    </article>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script> 
+</body>
+</html>
